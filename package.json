@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./styles.css -o ./dist/output.css --minify",
-    "start": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch"
+    "build": "cp -r ./images ./dist/images && npx tailwindcss -i ./styles.css -o ./dist/output.css --minify",
+    "start": "cp -r ./images ./dist/images && npx tailwindcss -i ./styles.css -o ./dist/output.css --watch "
   },
   "keywords": [],
   "author": "",
