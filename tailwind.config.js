@@ -21,6 +21,7 @@ module.exports = {
         accent: "#508D4E",
         secondColor: "#80AF81",
         bgColor: "#D6EFD8",
+        swiperBg: "rgba(0, 0, 0, 0.5)",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

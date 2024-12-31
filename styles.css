@@ -57,7 +57,9 @@ body.show-modal .burger-menu {
   background-size: cover;
 }
 
-.about-title::before {
+.about-title::before,
+.services-title::after,
+.gallery-title::before {
   content: "";
   width: 100%;
   height: 1px;
@@ -72,11 +74,4 @@ body.show-modal .burger-menu {
     ),
     url("./images/about/about-bg.png");
   background-size: cover;
-}
-
-.services-title::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #1a5319;
 }
