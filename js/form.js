@@ -1,3 +1,4 @@
+import { init, sendForm } from "@emailjs/browser";
 import { refs } from "./refs.js";
 
 const setError = (element, message) => {
@@ -48,4 +49,20 @@ export const validateInputs = () => {
   } else {
     setSuccess(refs.message);
   }
+};
+init(import.meta.env.VITE_PUBLIC_KEY);
+
+export const handleFormSubmit = () => {
+  // Відправлення форми
+  sendForm(
+    import.meta.env.VITE_SERVICE_ID,
+    import.meta.env.VITE_TEMPLATE_ID,
+    "#form"
+  )
+    .then(() => {
+      console.log("Form successfully sent!");
+    })
+    .catch((err) => {
+      console.error("Error sending form:", err);
+    });
 };

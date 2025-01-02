@@ -1,6 +1,12 @@
-import { refs } from "./js/refs.js";
-import { onCloseModal, onBackdropModalClick, onModalOpen } from "./js/modal.js";
-import { handleFormSubmit, validateInputs } from "./js/form.js";
+import "./style.css";
+
+import { refs } from "../js/refs.js";
+import {
+  onCloseModal,
+  onBackdropModalClick,
+  onModalOpen,
+} from "../js/modal.js";
+import { handleFormSubmit, validateInputs } from "../js/form.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
