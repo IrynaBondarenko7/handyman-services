@@ -58,8 +58,8 @@ body.show-modal .burger-menu {
 }
 
 .about-title::before,
-.services-title::after,
-.gallery-title::before {
+.section-title-right::after,
+.section-title-left::before {
   content: "";
   width: 100%;
   height: 1px;
@@ -73,5 +73,44 @@ body.show-modal .burger-menu {
       rgba(0, 0, 0, 0.6)
     ),
     url("./images/about/about-bg.png");
+  background-size: cover;
+}
+
+.input-control input:focus,
+.input-control textarea:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control.error textarea {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+
+@media screen and (min-width: 1440px) {
+  .input-control .error {
+    font-size: 16px;
+  }
+}
+
+.contact-us-wrap {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("./images/contactus/contactus-bg.jpg");
   background-size: cover;
 }
