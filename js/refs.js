@@ -7,4 +7,5 @@ export const refs = {
   username: document.getElementById("username"),
   email: document.getElementById("email"),
   message: document.getElementById("message"),
+  formModalWindow: document.getElementById("form-modal-window"),
 };

@@ -15,6 +15,9 @@ refs.menuList.addEventListener("click", onCloseModal);
 
 refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
-  validateInputs();
-  handleFormSubmit();
+  const isValid = validateInputs();
+
+  if (isValid) {
+    handleFormSubmit();
+  }
 });

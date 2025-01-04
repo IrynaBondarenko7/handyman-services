@@ -30,39 +30,104 @@ export const validateInputs = () => {
   const emailValue = refs.email.value.trim();
   const messageValue = refs.message.value.trim();
 
+  let isValid = true;
+
   if (usernameValue === "") {
     setError(refs.username, "Name is required");
+    isValid = false;
   } else {
     setSuccess(refs.username);
   }
 
   if (emailValue === "") {
     setError(refs.email, "Email is required");
+    isValid = false;
   } else if (!isValidEmail(emailValue)) {
     setError(refs.email, "Provide a valid email address");
+    isValid = false;
   } else {
     setSuccess(refs.email);
   }
 
   if (messageValue === "") {
     setError(refs.message, "Message is required");
+    isValid = false;
   } else {
     setSuccess(refs.message);
   }
+
+  return isValid;
 };
-init(import.meta.env.VITE_PUBLIC_KEY);
 
 export const handleFormSubmit = () => {
-  // Відправлення форми
+  init(import.meta.env.VITE_PUBLIC_KEY);
+
   sendForm(
     import.meta.env.VITE_SERVICE_ID,
     import.meta.env.VITE_TEMPLATE_ID,
     "#form"
   )
     .then(() => {
-      console.log("Form successfully sent!");
+      refs.username.value = "";
+      refs.email.value = "";
+      refs.message.value = "";
+      showSentFormFeedback("success");
     })
     .catch((err) => {
+      showSentFormFeedback("error");
       console.error("Error sending form:", err);
     });
 };
+
+function showSentFormFeedback(status) {
+  if (status === "success") {
+    const modalWindow = `
+        <div id="form-modal-window"
+      class="fixed top-0 left-0 w-full h-full bg-modalBg flex justify-center items-center z-50">
+      <div
+        class="w-[90%] md:w-[400px] xl:w-[500px] bg-white p-5 rounded-md text-center">
+        <p class="text-xs xl:text-xl">
+          Thank you! Your message has been successfully sent!
+        </p>
+        <button
+          id="close-modal"
+          class="w-36 mt-5 text-white bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300">
+          OK
+        </button>
+      </div>
+    </div>
+      `;
+
+    document.body.insertAdjacentHTML("beforeend", modalWindow);
+
+    document.getElementById("close-modal").addEventListener("click", () => {
+      const modal = document.getElementById("form-modal-window");
+      if (modal) modal.remove();
+    });
+  }
+  if (status === "error") {
+    const modalWindow = `
+        <div id="form-modal-window"
+      class="fixed top-0 left-0 w-full h-full bg-modalBg flex justify-center items-center z-50">
+      <div
+        class="w-[90%] md:w-[400px] xl:w-[500px] bg-white p-5 rounded-md text-center">
+        <p class="text-xs xl:text-xl">
+          Something went wrong, try again!
+        </p>
+        <button
+          id="close-modal"
+          class="w-36 mt-5 text-white bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300">
+          OK
+        </button>
+      </div>
+    </div>
+      `;
+
+    document.body.insertAdjacentHTML("beforeend", modalWindow);
+
+    document.getElementById("close-modal").addEventListener("click", () => {
+      const modal = document.getElementById("form-modal-window");
+      if (modal) modal.remove();
+    });
+  }
+}
