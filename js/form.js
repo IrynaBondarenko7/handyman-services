@@ -83,9 +83,9 @@ function showSentFormFeedback(status) {
   if (status === "success") {
     const modalWindow = `
         <div id="form-modal-window"
-      class="fixed top-0 left-0 w-full h-full bg-modalBg flex justify-center items-center z-50">
+      class="form-modal-window-backdrop">
       <div
-        class="w-[90%] md:w-[400px] xl:w-[500px] bg-white p-5 rounded-md text-center">
+        class="form-modal-window">
         <p class="text-xs xl:text-xl">
           Thank you! Your message has been successfully sent!
         </p>
@@ -108,9 +108,9 @@ function showSentFormFeedback(status) {
   if (status === "error") {
     const modalWindow = `
         <div id="form-modal-window"
-      class="fixed top-0 left-0 w-full h-full bg-modalBg flex justify-center items-center z-50">
+      class="form-modal-window-backdrop">
       <div
-        class="w-[90%] md:w-[400px] xl:w-[500px] bg-white p-5 rounded-md text-center">
+        class="form-modal-window">
         <p class="text-xs xl:text-xl">
           Something went wrong, try again!
         </p>

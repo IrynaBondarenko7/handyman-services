@@ -8,4 +8,5 @@ export const refs = {
   email: document.getElementById("email"),
   message: document.getElementById("message"),
   formModalWindow: document.getElementById("form-modal-window"),
+  header: document.querySelector("header"),
 };

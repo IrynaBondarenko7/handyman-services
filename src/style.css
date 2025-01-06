@@ -114,3 +114,15 @@ body.show-modal .burger-menu {
     url("/images/contactus/contactus-bg.jpg");
   background-size: cover;
 }
+
+.form-modal-window-backdrop {
+  @apply fixed top-0 left-0 w-full h-full bg-modalBg flex justify-center items-center z-50;
+}
+
+.form-modal-window {
+  @apply w-[90%] md:w-[400px] xl:w-[500px] bg-white p-5 rounded-md text-center;
+}
+
+header {
+  transition: top 0.3s ease;
+}

@@ -7,6 +7,7 @@ import {
   onModalOpen,
 } from "../js/modal.js";
 import { handleFormSubmit, validateInputs } from "../js/form.js";
+import { headerScrollPosition } from "../js/headerscroll.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
@@ -20,4 +21,8 @@ refs.form.addEventListener("submit", (e) => {
   if (isValid) {
     handleFormSubmit();
   }
+});
+
+window.addEventListener("scroll", () => {
+  headerScrollPosition();
 });
