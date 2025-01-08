@@ -126,3 +126,10 @@ body.show-modal .burger-menu {
 header {
   transition: top 0.3s ease;
 }
+
+.reviewsForm {
+  @apply w-[90%] rounded-lg flex flex-col gap-3 p-4 bg-white md:w-[500px];
+}
+.review-form-btn {
+  @apply text-white w-full md:w-48 bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300;
+}

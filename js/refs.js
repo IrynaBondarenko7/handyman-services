@@ -9,4 +9,5 @@ export const refs = {
   message: document.getElementById("message"),
   formModalWindow: document.getElementById("form-modal-window"),
   header: document.querySelector("header"),
+  addReviewBtn: document.getElementById("addreviewbtn"),
 };

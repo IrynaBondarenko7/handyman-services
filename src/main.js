@@ -8,6 +8,8 @@ import {
 } from "../js/modal.js";
 import { handleFormSubmit, validateInputs } from "../js/form.js";
 import { headerScrollPosition } from "../js/headerscroll.js";
+import { addReview } from "../js/firebase.js";
+import { addReviewFormModalWindow } from "../js/addReviewForm.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
@@ -26,3 +28,5 @@ refs.form.addEventListener("submit", (e) => {
 window.addEventListener("scroll", () => {
   headerScrollPosition();
 });
+
+refs.addReviewBtn.addEventListener("click", addReviewFormModalWindow);
