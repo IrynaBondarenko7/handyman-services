@@ -1,31 +1,42 @@
 import { addReview } from "./firebase.js";
-import { refs } from "./refs.js";
 
 export function addReviewFormModalWindow() {
   const modalWindow = `
-           <div id="form-modal-window" class="form-modal-window-backdrop">
-            <form id="reviewsForm" class="reviewsForm">
-              <input
-                type="text"
-                id="name"
-                placeholder="Your name"
-                class="w-full h-8 xl:h-9 border-main border-2 rounded-lg p-2 focus:outline-secondColor text-xs xl:text-base text-slate-700"
-              />
-              <textarea
-                name="review"
-                id="review"
-                placeholder="Please add your review here"
-                class="resize-none w-full h-40 border-main border-2 rounded-lg p-2 focus:outline-secondColor text-xs xl:text-base block text-slate-700"
-              ></textarea>
-              <div
-                class="mt-3 flex flex-col gap-4 md:flex-row md:justify-center"
-              >
-                <button type="submit" class="review-form-btn">Submit</button>
-                <button id="close-modal" class="review-form-btn">Cancel</button>
-              </div>
-            </form>
-          </div>
-      `;
+    <div id="form-modal-window" class="form-modal-window-backdrop">
+      <form id="reviewsForm" class="reviewsForm">
+        <div class="input-control reviews-input-wrap">
+          <label
+            for="name"
+            class="text-secondColor text-sm xl:text-xl font-bold">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            class="reviews-form-input"
+          />
+          <div class="error"></div>
+        </div>
+        <div class="input-control reviews-input-wrap">
+          <label
+            for="review"
+            class="text-secondColor text-sm xl:text-xl font-bold">Review</label>
+          <textarea
+            name="review"
+            id="review"
+            maxlength="450"
+            placeholder="Please add your review here"
+            class="reviews-form-textarea"
+          ></textarea>
+          <div class="error"></div>
+        </div>
+        <div class="reviews-form-btn-wrap">
+          <button type="submit" class="review-form-btn">Submit</button>
+          <button id="close-modal" class="review-form-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  `;
 
   document.body.insertAdjacentHTML("beforeend", modalWindow);
 

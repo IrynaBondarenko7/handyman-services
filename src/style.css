@@ -133,3 +133,23 @@ header {
 .review-form-btn {
   @apply text-white w-full md:w-48 bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300;
 }
+
+.sent-form-message {
+  @apply p-5 bg-white rounded-lg flex flex-col gap-5 items-center justify-center;
+}
+
+.reviews-input-wrap {
+  @apply flex flex-col gap-1;
+}
+
+.reviews-form-input {
+  @apply w-full h-8 xl:h-9 border-secondColor focus:border-main border-2 rounded-lg p-2 text-xs xl:text-base text-slate-700;
+}
+
+.reviews-form-textarea {
+  @apply resize-none w-full h-40 border-secondColor border-2 rounded-lg p-2 focus:border-main text-xs xl:text-base block text-slate-700;
+}
+
+.reviews-form-btn-wrap {
+  @apply mt-3 flex flex-col gap-4 md:flex-row md:justify-center;
+}
