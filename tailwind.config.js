@@ -22,6 +22,7 @@ module.exports = {
         secondColor: "#80AF81",
         bgColor: "#D6EFD8",
         modalBg: "rgba(0, 0, 0, 0.5)",
+        dateColor: "#777",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

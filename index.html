@@ -653,16 +653,17 @@
           </div>
         </div>
       </section>
-      <section id="reviews">
+      <section id="reviews" class="py-6 bg-bgColor">
         <div class="container">
           <h2
             class="text-lg xl:text-2xl font-bold text-main flex justify-end items-center gap-2 section-title-right"
           >
             Reviews
           </h2>
-          <h3 class="text-main text-sm xl:text-xl text-center">
-            There are no reviews yet
-          </h3>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper" id="reviews-swiper"></div>
+          </div>
           <button
             id="addreviewbtn"
             class="text-white w-full md:w-[250px] mx-auto block bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300"
@@ -834,10 +835,6 @@
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
         },
 
         scrollbar: {

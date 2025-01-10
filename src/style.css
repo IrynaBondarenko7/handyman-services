@@ -153,3 +153,92 @@ header {
 .reviews-form-btn-wrap {
   @apply mt-3 flex flex-col gap-4 md:flex-row md:justify-center;
 }
+
+.no-reviews-text {
+  @apply text-main text-base xl:text-xl mx-auto my-5;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  overflow-x: hidden;
+
+  @apply mt-5 pb-14;
+  position: relative;
+}
+
+.swiper-container .swiper-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.swiper-container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.swiper-container .swiper-button-next {
+  @apply text-secondColor top-[280px] xl:top-[290px] right-[30%] md:right-[40%] xl:right-[46%] border-secondColor border-2 rounded-full w-9 h-9 bg-white;
+}
+.swiper-container .swiper-button-prev {
+  @apply text-secondColor top-[280px] xl:top-[290px] left-[30%] md:left-[40%] xl:left-[46%] border-secondColor border-2 rounded-full w-9 h-9 bg-white;
+}
+
+.swiper-button-next:after {
+  @apply text-2xl;
+}
+
+.swiper-button-prev:after {
+  @apply text-2xl;
+}
+
+.review-card {
+  padding: 1rem;
+  background: #f9f9f9;
+  max-width: 450px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  overflow: hidden;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  @apply rounded-lg;
+}
+
+.review-card .review-text {
+  word-wrap: break-word;
+  @apply italic text-xs xl:text-sm grow overflow-y-auto max-h-[150px];
+}
+
+.review-name {
+  word-wrap: break-word;
+  @apply font-bold text-sm xl:text-base;
+}
+
+.review-date {
+  @apply text-dateColor text-xs xl:text-sm;
+}
+
+.quotes-icon {
+  @apply w-8 h-8 fill-secondColor;
+}
+
+.user-icon {
+  @apply w-8 h-8 fill-secondColor;
+}
+
+.review-user-info {
+  @apply flex flex-col w-full items-start;
+}
+
+.review-user-info-wrap {
+  @apply flex gap-3;
+}
