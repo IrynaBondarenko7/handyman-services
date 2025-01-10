@@ -12,6 +12,7 @@ export function addReviewFormModalWindow() {
             type="text"
             id="name"
             name="name"
+            maxlength="40"
             placeholder="Your name"
             class="reviews-form-input"
           />
