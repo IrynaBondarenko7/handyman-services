@@ -1,7 +1,7 @@
 import { init, sendForm } from "@emailjs/browser";
 import { refs } from "./refs.js";
 
-const setError = (element, message) => {
+export const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
 
@@ -10,7 +10,7 @@ const setError = (element, message) => {
   inputControl.classList.remove("success");
 };
 
-const setSuccess = (element) => {
+export const setSuccess = (element) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
 

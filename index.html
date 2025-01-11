@@ -653,16 +653,23 @@
           </div>
         </div>
       </section>
-      <section id="reviews">
+      <section id="reviews" class="py-6 bg-bgColor">
         <div class="container">
           <h2
             class="text-lg xl:text-2xl font-bold text-main flex justify-end items-center gap-2 section-title-right"
           >
             Reviews
           </h2>
-          <h3 class="text-main text-sm xl:text-xl text-center">
-            There are no reviews yet
-          </h3>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper" id="reviews-swiper"></div>
+          </div>
+          <button
+            id="addreviewbtn"
+            class="text-white w-full md:w-[250px] mx-auto block bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300"
+          >
+            Add new review
+          </button>
         </div>
       </section>
       <section id="contactus" class="py-6 text-white">
@@ -811,34 +818,34 @@
     </main>
 
     <footer class="bg-accent text-white py-5">
-      <div class="container">
+      <div class="container flex flex-col items-center gap-3">
+        <a
+          href="https://maps.app.goo.gl/BpajfzFY76BitRpq8"
+          class="flex gap-2 justify-center items-center text-white hover:text-bgColor focus:text-bgColor transition-all duration-300 text-sm xl:text-xl"
+          target="blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="location"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            class="fill-current"
+          >
+            <path
+              d="M12,.042a9.992,9.992,0,0,0-9.981,9.98c0,2.57,1.99,6.592,5.915,11.954a5.034,5.034,0,0,0,8.132,0c3.925-5.362,5.915-9.384,5.915-11.954A9.992,9.992,0,0,0,12,.042ZM12,14a4,4,0,1,1,4-4A4,4,0,0,1,12,14Z"
+            />
+          </svg>
+
+          <p>Stratford-upon-Avon</p>
+        </a>
         <p class="text-sm xl:text-xl text-center">
           <span> &#169;</span> 2025 D&J Landscaping and General Handyman
           Services
         </p>
       </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
-    <script type="module">
-      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
-      const swiper = new Swiper(".swiper", {
-        speed: 3000,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        scrollbar: {
-          el: ".swiper-scrollbar",
-          draggable: true,
-        },
-      });
-    </script>
+    <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
