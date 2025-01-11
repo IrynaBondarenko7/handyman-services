@@ -7,9 +7,9 @@ import {
   query,
   orderBy,
 } from "firebase/firestore";
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
 import { setError, setSuccess } from "./form.js";
+import { initSwiper } from "./reviewsSwiper.js";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -188,34 +188,6 @@ export const fetchReviews = async () => {
     initSwiper();
   } catch (error) {
     console.error("Error fetching reviews:", error);
-    swiperWrapper.innerHTML =
-      "<p>Failed to load reviews. Please try again later.</p>";
+    swiperWrapper.innerHTML = `<p class="no-reviews-text">Failed to load reviews. Please try again later.</p>`;
   }
-};
-
-let swiperInstance;
-
-const initSwiper = () => {
-  if (swiperInstance) swiperInstance.destroy();
-
-  swiperInstance = new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1440: {
-        slidesPerView: 3,
-      },
-    },
-  });
 };
