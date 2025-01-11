@@ -135,30 +135,15 @@ export const fetchReviews = async () => {
       slide.innerHTML = `
   <div class="review-card">
             <div>
-                <svg
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 32 32"
-                  class="quotes-icon"
-                >
-                  <path
-                    d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"
-                  ></path>
+                <svg class="quotes-icon">
+                     <use xlink:href="./images/icons/icons.svg#quotes-left"></use>
                 </svg>
           </div>
                 <p class="review-text">${review.review}</p>
                 <div class="review-user-info-wrap">
                   <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="Layer_1"
-                      data-name="Layer 1"
-                      viewBox="0 0 24 24"
-                      class="user-icon"
-                    >
-                      <path
-                        d="m16,23.314c-1.252.444-2.598.686-4,.686s-2.748-.242-4-.686v-2.314c0-2.206,1.794-4,4-4s4,1.794,4,4v2.314ZM12,7c-1.103,0-2,.897-2,2s.897,2,2,2,2-.897,2-2-.897-2-2-2Zm12,5c0,4.433-2.416,8.311-6,10.389v-1.389c0-3.309-2.691-6-6-6s-6,2.691-6,6v1.389C2.416,20.311,0,16.433,0,12,0,5.383,5.383,0,12,0s12,5.383,12,12Zm-8-3c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Z"
-                      />
+                    <svg class="quotes-icon">
+                     <use xlink:href="./images/icons/icons.svg#circle-user"></use>
                     </svg>
                   </div>
                   <div class="review-user-info">
