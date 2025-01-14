@@ -23,6 +23,7 @@ module.exports = {
         bgColor: "#D6EFD8",
         modalBg: "rgba(0, 0, 0, 0.5)",
         dateColor: "#777",
+        cardsBg: "#f9f9f9",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
