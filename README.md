@@ -58,4 +58,4 @@ This website was developed as a commissioned project for **D&J Landscaping and G
 For inquiries or collaboration opportunities, feel free to reach out:
 
 - **Email**: [ira.bondarenko@ukr.net](mailto:ira.bondarenko@ukr.net)
-- Portfolio: [Iryna Bond](https://iryna-bond-portfolio.vercel.app/)
+- **Portfolio**: [Iryna Bond](https://iryna-bond-portfolio.vercel.app/)
