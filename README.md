@@ -47,7 +47,7 @@ The website consists of the following sections:
 
 ## 🚀 Deployment
 
-The website is live and can be accessed via **Netlify**: [D&J](https://markdownlivepreview.com/)
+The website is live and can be accessed via **Netlify**: [D&J](https://garden-landscaping-services.co.uk/)
 
 ## 📝 Acknowledgments
 
