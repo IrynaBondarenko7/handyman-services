@@ -2,7 +2,7 @@
 
 This repository contains the code for a custom-built landing page developed for **D&J Landscaping and General Handyman Services**. The project was commissioned to create a professional and user-friendly website that highlights their services and engages their customers.
 
-![Project image](./images/asset-1.pngp "project image")
+![Project image](public/images/asset-1.png "project image")
 
 ## 🌟 Project Overview
 
@@ -57,5 +57,5 @@ This website was developed as a commissioned project for **D&J Landscaping and G
 
 For inquiries or collaboration opportunities, feel free to reach out:
 
-- **Email**: [ira.bondarenko@ukr.net](ira.bondarenko@ukr.net)
-- Portfolio: [Iryna Bond](https://iryna-bond-portfolio.vercel.app/)
+- **Email**: [ira.bondarenko@ukr.net](mailto:ira.bondarenko@ukr.net)
+- **Portfolio**: [Iryna Bond](https://iryna-bond-portfolio.vercel.app/)
