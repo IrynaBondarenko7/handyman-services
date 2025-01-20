@@ -233,3 +233,9 @@ header {
 .review-user-info-wrap {
   @apply flex gap-3 items-center;
 }
+
+@media screen and (max-width: 340px) {
+  .custom-padding {
+    padding: 4px;
+  }
+}
