@@ -11,6 +11,7 @@ This repository contains the code for a custom-built landing page developed for 
 - Gardening services
 - Basic repairs and maintenance
 - Professional landscaping
+- Painting
 
 ### Key Features
 
