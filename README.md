@@ -1,12 +1,12 @@
-# D&J Landscaping and General Handyman Services
+# Landscaping and General Handyman Services
 
-This repository contains the code for a custom-built landing page developed for **D&J Landscaping and General Handyman Services**. The project was commissioned to create a professional and user-friendly website that highlights their services and engages their customers.
+This repository contains the code for a custom-built landing page developed for ** Landscaping and General Handyman Services**. The project was commissioned to create a professional and user-friendly website that highlights their services and engages their customers.
 
 ![Project image](public/images/asset-1.png "project image")
 
 ## 🌟 Project Overview
 
-**D&J Landscaping and General Handyman Services** specializes in a wide range of property maintenance, landscaping, and gardening services in Stratford-upon-Avon and surrounding areas. The website was designed to showcase their expertise and provide seamless access to their services, including:
+**Landscaping and General Handyman Services** specializes in a wide range of property maintenance, landscaping, and gardening services in Stratford-upon-Avon and surrounding areas. The website was designed to showcase their expertise and provide seamless access to their services, including:
 
 - Gardening services
 - Basic repairs and maintenance
@@ -48,11 +48,7 @@ The website consists of the following sections:
 
 ## 🚀 Deployment
 
-The website is live and can be accessed via **Netlify**: [D&J](https://garden-landscaping-services.co.uk/)
-
-## 📝 Acknowledgments
-
-This website was developed as a commissioned project for **D&J Landscaping and General Handyman Services**. Special thanks to the team at D&J for their input and collaboration throughout the project.
+The website is live and can be accessed via **Netlify**: [Demo](https://landscaping-and-handyman-services.netlify.app/)
 
 ## 📧 Contact
 
