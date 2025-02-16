@@ -1,6 +1,6 @@
 # Landscaping and General Handyman Services
 
-This repository contains the code for a custom-built landing page developed for ** Landscaping and General Handyman Services**. The project was commissioned to create a professional and user-friendly website that highlights their services and engages their customers.
+This repository contains the code for a custom-built landing page developed for **Landscaping and General Handyman Services**. The project was commissioned to create a professional and user-friendly website that highlights their services and engages their customers.
 
 ![Project image](public/images/asset-1.png "project image")
 
