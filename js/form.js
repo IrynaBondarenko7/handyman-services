@@ -80,14 +80,18 @@ export const handleFormSubmit = () => {
 };
 
 function showSentFormFeedback(status) {
-  if (status === "success") {
-    const modalWindow = `
+  const modalWindow = `
         <div id="form-modal-window"
       class="form-modal-window-backdrop">
       <div
         class="form-modal-window">
         <p class="text-xs xl:text-xl">
-          Thank you! Your message has been successfully sent!
+        ${
+          status === "success"
+            ? "Thank you! Your message has been successfully sent!"
+            : "Something went wrong, try again!"
+        }
+          
         </p>
         <button
           id="close-modal"
@@ -98,36 +102,14 @@ function showSentFormFeedback(status) {
     </div>
       `;
 
-    document.body.insertAdjacentHTML("beforeend", modalWindow);
+  document.body.insertAdjacentHTML("beforeend", modalWindow);
 
-    document.getElementById("close-modal").addEventListener("click", () => {
-      const modal = document.getElementById("form-modal-window");
-      if (modal) modal.remove();
-    });
-  }
-  if (status === "error") {
-    const modalWindow = `
-        <div id="form-modal-window"
-      class="form-modal-window-backdrop">
-      <div
-        class="form-modal-window">
-        <p class="text-xs xl:text-xl">
-          Something went wrong, try again!
-        </p>
-        <button
-          id="close-modal"
-          class="w-36 mt-5 text-white bg-accent py-2 px-3 self-start text-sm md:text-base xl:text-lg xl:px-4 xl:mt-5 rounded-xl hover:bg-main hover:text-bgColor transition-all duration-300">
-          OK
-        </button>
-      </div>
-    </div>
-      `;
+  removeModal();
+}
 
-    document.body.insertAdjacentHTML("beforeend", modalWindow);
-
-    document.getElementById("close-modal").addEventListener("click", () => {
-      const modal = document.getElementById("form-modal-window");
-      if (modal) modal.remove();
-    });
-  }
+function removeModal() {
+  document.getElementById("close-modal").addEventListener("click", () => {
+    const modal = document.getElementById("form-modal-window");
+    if (modal) modal.remove();
+  });
 }

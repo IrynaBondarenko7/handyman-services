@@ -8,7 +8,7 @@ import {
 } from "../js/modal.js";
 import { handleFormSubmit, validateInputs } from "../js/form.js";
 import { headerScrollPosition } from "../js/headerscroll.js";
-import { addReview, fetchReviews } from "../js/firebase.js";
+import { fetchReviews } from "../js/firebase.js";
 import { addReviewFormModalWindow } from "../js/addReviewForm.js";
 import { gallerySwiper } from "../js/gallerySwiper.js";
 
