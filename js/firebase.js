@@ -8,7 +8,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 
-import { isValidEmail, setError, setSuccess } from "./form.js";
+import { validateInputs } from "./inputsValidation.js";
 import { initSwiper } from "./reviewsSwiper.js";
 
 const firebaseConfig = {
@@ -34,7 +34,17 @@ export const addReview = async (e) => {
   const review = document.getElementById("review");
   const email = document.getElementById("reviewEmail");
 
-  if (validateInputs(name, review, email)) {
+  const inputs = {
+    username: name.value,
+    userNameRef: name,
+    email: email.value,
+    emailRef: email,
+    text: review.value,
+    textRef: review,
+    fieldTitle: "Review",
+  };
+
+  if (validateInputs(inputs)) {
     try {
       await addDoc(collection(db, "reviews"), {
         name: name.value,
@@ -84,39 +94,6 @@ export const addReview = async (e) => {
       }
     }
   }
-};
-
-export const validateInputs = (name, review, email) => {
-  const usernameValue = name.value.trim();
-  const reviewValue = review.value.trim();
-  const emailValue = email.value.trim();
-  let isValid = true;
-
-  if (usernameValue === "") {
-    setError(name, "Name is required");
-    isValid = false;
-  } else {
-    setSuccess(name);
-  }
-
-  if (reviewValue === "") {
-    setError(review, "Review text is required");
-    isValid = false;
-  } else {
-    setSuccess(review);
-  }
-
-  if (emailValue === "") {
-    setError(email, "Email is required");
-    isValid = false;
-  } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address");
-    isValid = false;
-  } else {
-    setSuccess(email);
-  }
-
-  return isValid;
 };
 
 export const fetchReviews = async () => {
