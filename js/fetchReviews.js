@@ -2,7 +2,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { initSwiper } from "./reviewsSwiper.js";
 import { db } from "./firebaseConfig.js";
 
-export const fetchReviews = async () => {
+export const fetchAndAppendReviews = async () => {
   const swiperWrapper = document.getElementById("reviews-swiper");
   const swiperContainer = document.querySelector(".swiper-container");
   swiperWrapper.innerHTML = "Loading reviews...";
@@ -30,15 +30,11 @@ export const fetchReviews = async () => {
     });
 
     if (!swiperContainer.querySelector(".swiper-button-next")) {
-      const nextButton = document.createElement("div");
-      nextButton.classList.add("swiper-button-next");
-      swiperContainer.appendChild(nextButton);
+      createSwiperButtons(swiperContainer, "swiper-button-next");
     }
 
     if (!swiperContainer.querySelector(".swiper-button-prev")) {
-      const prevButton = document.createElement("div");
-      prevButton.classList.add("swiper-button-prev");
-      swiperContainer.appendChild(prevButton);
+      createSwiperButtons(swiperContainer, "swiper-button-prev");
     }
 
     initSwiper();
@@ -77,3 +73,9 @@ const formatDate = (date) => {
   const options = { day: "numeric", month: "long", year: "numeric" };
   return new Date(date).toLocaleDateString("en-US", options);
 };
+
+function createSwiperButtons(container, buttonsClassName) {
+  const button = document.createElement("div");
+  button.classList.add(buttonsClassName);
+  container.appendChild(button);
+}

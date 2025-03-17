@@ -1,7 +1,7 @@
 import { collection, addDoc } from "firebase/firestore";
 import { validateInputs } from "./inputsValidation.js";
 import { db } from "./firebaseConfig.js";
-import { fetchReviews } from "./fetchReviews.js";
+import { fetchAndAppendReviews } from "./fetchReviews.js";
 
 export const addReviewFormSubmit = async (e) => {
   e.preventDefault();
@@ -35,7 +35,7 @@ export const addReviewFormSubmit = async (e) => {
 
       reviewSubmittingResult();
 
-      fetchReviews();
+      fetchAndAppendReviews();
     } catch (error) {
       reviewSubmittingResult(error);
     }
