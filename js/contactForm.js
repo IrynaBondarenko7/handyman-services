@@ -1,7 +1,8 @@
 import { init, sendForm } from "@emailjs/browser";
 import { refs } from "./refs.js";
+import { removeModal } from "./removeModal.js";
 
-export const handleFormSubmit = () => {
+export const handleContactFormSubmit = () => {
   init(import.meta.env.VITE_PUBLIC_KEY);
 
   sendForm(
@@ -47,11 +48,4 @@ function showSentFormFeedback(status) {
   document.body.insertAdjacentHTML("beforeend", modalWindow);
 
   removeModal();
-}
-
-function removeModal() {
-  document.getElementById("close-modal").addEventListener("click", () => {
-    const modal = document.getElementById("form-modal-window");
-    if (modal) modal.remove();
-  });
 }

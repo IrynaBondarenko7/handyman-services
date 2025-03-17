@@ -6,12 +6,13 @@ import {
   onBackdropModalClick,
   onModalOpen,
 } from "../js/modal.js";
-import { handleFormSubmit } from "../js/form.js";
+import { handleContactFormSubmit } from "../js/contactForm.js";
 import { validateInputs } from "../js/inputsValidation.js";
 import { headerScrollPosition } from "../js/headerscroll.js";
-import { fetchReviews } from "../js/firebase.js";
+
 import { addReviewFormModalWindow } from "../js/addReviewForm.js";
 import { gallerySwiper } from "../js/gallerySwiper.js";
+import { fetchReviews } from "../js/fetchReviews.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
@@ -36,7 +37,7 @@ refs.form.addEventListener("submit", (e) => {
   const isValid = validateInputs(inputs);
 
   if (isValid) {
-    handleFormSubmit();
+    handleContactFormSubmit();
   }
 });
 

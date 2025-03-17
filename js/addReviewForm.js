@@ -1,4 +1,5 @@
-import { addReview } from "./firebase.js";
+import { addReviewFormSubmit } from "./handleReviewFormSubmit.js";
+import { removeModal } from "./removeModal.js";
 
 export function addReviewFormModalWindow() {
   const modalWindow = `
@@ -60,13 +61,10 @@ export function addReviewFormModalWindow() {
 
   document.body.insertAdjacentHTML("beforeend", modalWindow);
 
-  document.getElementById("close-modal").addEventListener("click", () => {
-    const modal = document.getElementById("form-modal-window");
-    if (modal) modal.remove();
-  });
+  removeModal();
 
   const reviewsForm = document.getElementById("reviewsForm");
   if (reviewsForm) {
-    reviewsForm.addEventListener("submit", addReview);
+    reviewsForm.addEventListener("submit", addReviewFormSubmit);
   }
 }
