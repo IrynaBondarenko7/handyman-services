@@ -10,4 +10,7 @@ export const refs = {
   formModalWindow: document.getElementById("form-modal-window"),
   header: document.querySelector("header"),
   addReviewBtn: document.getElementById("addreviewbtn"),
+  reviewsSwiperWrapper: document.getElementById("reviews-swiper"),
+  reviewsSwiperContainer: document.querySelector(".swiper-container"),
+  gallerySwiperContainer: document.querySelector(".swiper"),
 };

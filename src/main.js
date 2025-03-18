@@ -20,6 +20,7 @@ refs.burgerBackdrop.addEventListener("click", onBackdropModalClick);
 refs.menuList.addEventListener("click", onCloseModal);
 
 gallerySwiper();
+fetchAndAppendReviews();
 
 refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -46,7 +47,3 @@ window.addEventListener("scroll", () => {
 });
 
 refs.addReviewBtn.addEventListener("click", addReviewFormModalWindow);
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchAndAppendReviews();
-});

@@ -1,6 +1,6 @@
 import { init, sendForm } from "@emailjs/browser";
 import { refs } from "./refs.js";
-import { removeModal } from "./removeModal.js";
+import { closeModalWindow, removeModal } from "./removeModal.js";
 
 export const handleContactFormSubmit = () => {
   init(import.meta.env.VITE_PUBLIC_KEY);
@@ -47,5 +47,6 @@ function showSentFormFeedback(status) {
 
   document.body.insertAdjacentHTML("beforeend", modalWindow);
 
+  window.addEventListener("keydown", closeModalWindow);
   removeModal();
 }

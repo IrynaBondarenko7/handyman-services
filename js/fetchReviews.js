@@ -1,22 +1,21 @@
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { initSwiper } from "./reviewsSwiper.js";
 import { db } from "./firebaseConfig.js";
+import { refs } from "./refs.js";
 
 export const fetchAndAppendReviews = async () => {
-  const swiperWrapper = document.getElementById("reviews-swiper");
-  const swiperContainer = document.querySelector(".swiper-container");
-  swiperWrapper.innerHTML = "Loading reviews...";
+  refs.reviewsSwiperWrapper.innerHTML = "Loading reviews...";
 
   try {
     const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
     const querySnapshot = await getDocs(q);
 
     if (querySnapshot.empty) {
-      swiperWrapper.innerHTML = `<p class="no-reviews-text">No reviews yet. Be the first to leave one!</p>`;
+      refs.reviewsSwiperWrapper.innerHTML = `<p class="no-reviews-text">No reviews yet. Be the first to leave one!</p>`;
       return;
     }
 
-    swiperWrapper.innerHTML = "";
+    refs.reviewsSwiperWrapper.innerHTML = "";
 
     querySnapshot.forEach((doc) => {
       const review = doc.data();
@@ -26,20 +25,20 @@ export const fetchAndAppendReviews = async () => {
 
       slide.innerHTML = reviewHTMLcode(review);
 
-      swiperWrapper.appendChild(slide);
+      refs.reviewsSwiperWrapper.appendChild(slide);
     });
 
-    if (!swiperContainer.querySelector(".swiper-button-next")) {
-      createSwiperButtons(swiperContainer, "swiper-button-next");
+    if (!refs.reviewsSwiperContainer.querySelector(".swiper-button-next")) {
+      createSwiperButtons(refs.reviewsSwiperContainer, "swiper-button-next");
     }
 
-    if (!swiperContainer.querySelector(".swiper-button-prev")) {
-      createSwiperButtons(swiperContainer, "swiper-button-prev");
+    if (!refs.reviewsSwiperContainer.querySelector(".swiper-button-prev")) {
+      createSwiperButtons(refs.reviewsSwiperContainer, "swiper-button-prev");
     }
 
     initSwiper();
   } catch (error) {
-    swiperWrapper.innerHTML = `<p class="no-reviews-text">Failed to load reviews. Please try again later.</p>`;
+    refs.reviewsSwiperWrapper.innerHTML = `<p class="no-reviews-text">Failed to load reviews. Please try again later.</p>`;
   }
 };
 

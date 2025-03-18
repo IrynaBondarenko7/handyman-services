@@ -1,4 +1,5 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+import { refs } from "./refs";
 
 export const gallerySwiper = () => {
   const swiper = new Swiper(".swiper", {
@@ -26,8 +27,7 @@ export const gallerySwiper = () => {
     { threshold: 0.5 }
   );
 
-  const swiperContainer = document.querySelector(".swiper");
-  if (swiperContainer) {
-    observer.observe(swiperContainer);
+  if (refs.gallerySwiperContainer) {
+    observer.observe(refs.gallerySwiperContainer);
   }
 };

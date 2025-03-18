@@ -1,5 +1,5 @@
 import { addReviewFormSubmit } from "./handleReviewFormSubmit.js";
-import { removeModal } from "./removeModal.js";
+import { closeModalWindow, removeModal } from "./removeModal.js";
 
 export function addReviewFormModalWindow() {
   const modalWindow = `
@@ -61,6 +61,14 @@ export function addReviewFormModalWindow() {
 
   document.body.insertAdjacentHTML("beforeend", modalWindow);
 
+  // const modal = document.getElementById("form-modal-window");
+
+  // window.addEventListener("keydown", (evt) => {
+  //   closeReviewModal(evt);
+  //   console.log(evt.code);
+  // });
+
+  window.addEventListener("keydown", closeModalWindow);
   removeModal();
 
   const reviewsForm = document.getElementById("reviewsForm");
