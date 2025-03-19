@@ -23,34 +23,34 @@ export const isValidEmail = (email) => {
 };
 
 export const validateInputs = (inputsObject) => {
-  const usernameValue = inputsObject.username.trim();
-  const emailValue = inputsObject.email.trim();
-  const textValue = inputsObject.text.trim();
+  const usernameValue = inputsObject.username.value.trim();
+  const emailValue = inputsObject.email.value.trim();
+  const textValue = inputsObject.text.value.trim();
 
   let isValid = true;
 
   if (usernameValue === "") {
-    setError(inputsObject.userNameRef, "Name is required");
+    setError(inputsObject.username, "Name is required");
     isValid = false;
   } else {
-    setSuccess(inputsObject.userNameRef);
+    setSuccess(inputsObject.username);
   }
 
   if (emailValue === "") {
-    setError(inputsObject.emailRef, "Email is required");
+    setError(inputsObject.email, "Email is required");
     isValid = false;
   } else if (!isValidEmail(emailValue)) {
-    setError(inputsObject.emailRef, "Provide a valid email address");
+    setError(inputsObject.email, "Provide a valid email address");
     isValid = false;
   } else {
-    setSuccess(inputsObject.emailRef);
+    setSuccess(inputsObject.email);
   }
 
   if (textValue === "") {
-    setError(inputsObject.textRef, `${inputsObject.fieldTitle} is required`);
+    setError(inputsObject.text, `${inputsObject.fieldTitle} is required`);
     isValid = false;
   } else {
-    setSuccess(inputsObject.textRef);
+    setSuccess(inputsObject.text);
   }
 
   return isValid;

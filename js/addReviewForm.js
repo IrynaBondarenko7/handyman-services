@@ -2,7 +2,21 @@ import { addReviewFormSubmit } from "./handleReviewFormSubmit.js";
 import { closeModalWindow, removeModal } from "./removeModal.js";
 
 export function addReviewFormModalWindow() {
-  const modalWindow = `
+  const modalWindow = createReviewModalWindowHTML();
+
+  document.body.insertAdjacentHTML("beforeend", modalWindow);
+
+  window.addEventListener("keydown", closeModalWindow);
+  removeModal();
+
+  const reviewsForm = document.getElementById("reviewsForm");
+  if (reviewsForm) {
+    reviewsForm.addEventListener("submit", addReviewFormSubmit);
+  }
+}
+
+function createReviewModalWindowHTML() {
+  return `
    <div id="form-modal-window" class="form-modal-window-backdrop">
       <form id="reviewsForm" class="reviewsForm">
         <div class="input-control reviews-input-wrap">
@@ -58,21 +72,4 @@ export function addReviewFormModalWindow() {
       </form>
     </div>
   `;
-
-  document.body.insertAdjacentHTML("beforeend", modalWindow);
-
-  // const modal = document.getElementById("form-modal-window");
-
-  // window.addEventListener("keydown", (evt) => {
-  //   closeReviewModal(evt);
-  //   console.log(evt.code);
-  // });
-
-  window.addEventListener("keydown", closeModalWindow);
-  removeModal();
-
-  const reviewsForm = document.getElementById("reviewsForm");
-  if (reviewsForm) {
-    reviewsForm.addEventListener("submit", addReviewFormSubmit);
-  }
 }

@@ -26,12 +26,9 @@ refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const inputs = {
-    username: refs.username.value,
-    userNameRef: refs.username,
-    email: refs.email.value,
-    emailRef: refs.email,
-    text: refs.message.value,
-    textRef: refs.message,
+    username: refs.username,
+    email: refs.email,
+    text: refs.message,
     fieldTitle: "Message",
   };
 

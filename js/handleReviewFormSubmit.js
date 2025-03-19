@@ -11,12 +11,9 @@ export const addReviewFormSubmit = async (e) => {
   const email = document.getElementById("reviewEmail");
 
   const inputs = {
-    username: name.value,
-    userNameRef: name,
-    email: email.value,
-    emailRef: email,
-    text: review.value,
-    textRef: review,
+    username: name,
+    email: email,
+    text: review,
     fieldTitle: "Review",
   };
 
