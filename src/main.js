@@ -13,6 +13,7 @@ import { headerScrollPosition } from "../js/headerscroll.js";
 import { addReviewFormModalWindow } from "../js/addReviewForm.js";
 import { gallerySwiper } from "../js/gallerySwiper.js";
 import { fetchAndAppendReviews } from "../js/fetchReviews.js";
+import { contentFulCMS } from "../js/contentful.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
@@ -44,3 +45,5 @@ window.addEventListener("scroll", () => {
 });
 
 refs.addReviewBtn.addEventListener("click", addReviewFormModalWindow);
+
+contentFulCMS();
