@@ -19,6 +19,10 @@ refs.btnBurgerClose.addEventListener("click", onCloseModal);
 refs.burgerBackdrop.addEventListener("click", onBackdropModalClick);
 refs.menuList.addEventListener("click", onCloseModal);
 
+window.addEventListener("scroll", () => {
+  headerScrollPosition();
+});
+
 fetchAndAppendReviews();
 fetchAndAppendGalleryImagesFromCMS();
 
@@ -37,10 +41,6 @@ refs.form.addEventListener("submit", (e) => {
   if (isValid) {
     handleContactFormSubmit();
   }
-});
-
-window.addEventListener("scroll", () => {
-  headerScrollPosition();
 });
 
 refs.addReviewBtn.addEventListener("click", addReviewFormModalWindow);
