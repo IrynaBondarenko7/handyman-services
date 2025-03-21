@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "contentful": "^11.5.9",
     "firebase": "^11.1.0",
     "swiper": "^11.2.0"
   }
