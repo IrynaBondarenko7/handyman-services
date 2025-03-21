@@ -11,17 +11,16 @@ import { validateInputs } from "../js/inputsValidation.js";
 import { headerScrollPosition } from "../js/headerscroll.js";
 
 import { addReviewFormModalWindow } from "../js/addReviewForm.js";
-import { gallerySwiper } from "../js/gallerySwiper.js";
 import { fetchAndAppendReviews } from "../js/fetchReviews.js";
-import { contentFulCMS } from "../js/contentful.js";
+import { fetchAndAppendGalleryImagesFromCMS } from "../js/fetchGalleryImages.js";
 
 refs.openMenuBtn.addEventListener("click", onModalOpen);
 refs.btnBurgerClose.addEventListener("click", onCloseModal);
 refs.burgerBackdrop.addEventListener("click", onBackdropModalClick);
 refs.menuList.addEventListener("click", onCloseModal);
 
-gallerySwiper();
 fetchAndAppendReviews();
+fetchAndAppendGalleryImagesFromCMS();
 
 refs.form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -45,5 +44,3 @@ window.addEventListener("scroll", () => {
 });
 
 refs.addReviewBtn.addEventListener("click", addReviewFormModalWindow);
-
-contentFulCMS();
